@@ -1,0 +1,61 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "title": "Student Portal",
+      "category": "js",
+      "tech": "HTML5, CSS, JavaScript",
+      "image": "images/Student-Portal.png",
+      "github": "https://github.com/muhammadjunaid73/Student-Portal",
+      "desc": "This is a user-friendly Student Portal, built with HTML, CSS, and JavaScript to streamline academic management. It features dedicated sections for announcements, deadlines, and support to keep students organized and informed."
+    },
+    {
+      "title": "Quiz Cards",
+      "category": "js",
+      "tech": "HTML5, CSS, JavaScript",
+      "img": "images/Quiz-App.png",
+      "image": "images/Quiz-App.png",
+      "github": "https://github.com/muhammadjunaid73/vibecheck",
+      "desc": "This is an interactive Quiz Cards web application built using HTML, CSS, and JavaScript. It features 5 dynamic cards that automatically transition to the next question as soon as a user selects an option.",
+      "id": "2"
+    },
+    {
+      "id": "3",
+      "title": "University-Registration Form",
+      "category": "js",
+      "tech": "HTML5, CSS, JavaScript",
+      "img": "images/University-Registration-Form.png",
+      "image": "images/University-Registration-Form.png",
+      "github": "https://github.com/muhammadjunaid73/event-forms",
+      "desc": "This is a fully functional Course Registration Portal built using HTML, CSS, and JavaScript for managing student enrollment. It allows users to easily add new registrations through a form and instantly view, edit, or delete them in a dynamic Recent Registrations list."
+    },
+    {
+      "title": "Weather App",
+      "category": "frontend",
+      "tech": "HTML5, CSS",
+      "img": "images/Weather-App.webp",
+      "image": "images/Weather-App.webp",
+      "github": "#",
+      "desc": "This is a modern, clean weather dashboard interface designed using HTML and CSS, featuring a minimalist light-themed layout. It displays a comprehensive weekly forecast alongside detailed daily highlights like UV index, wind speed, and air quality metrics.",
+      "id": "cmT5XLapuQI"
+    }
+  ],
+  "suggestions": [
+    {
+      "name": "Junaid",
+      "email": "rajunaid7376@gmail.com",
+      "title": "Weather App",
+      "tech": "Pure JS",
+      "desc": "A weather app",
+      "id": "aP4meU0iV2Q"
+    },
+    {
+      "name": "Ali Ahmad",
+      "email": "aliahmad@gmail.com",
+      "title": "To-do list",
+      "tech": "HTML, CSS, JS",
+      "desc": "A Daily to-do list",
+      "id": "BbePRvHt2Kw"
+    }
+  ]
+}

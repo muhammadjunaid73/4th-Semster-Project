@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+    <div class="container-fluid container-lg my-3 my-md-4 px-2 px-sm-3">
+
+        <header class="bg-dark text-white shadow-lg rounded-3 p-3 p-md-4 mb-4 border-bottom border-warning">
+            <div class="row align-items-center g-3">
+                <div class="col-12 col-sm-7 text-center text-sm-start">
+                    <span class="badge bg-danger text-uppercase mb-1 tracking-wider" style="font-size: 0.7rem;">
+                        Control Center
+                    </span>
+                    <h2 class="fw-bold m-0 text-warning fs-3 fs-md-2">Portfolio Dashboard</h2>
+                </div>
+        
+                <div class="col-12 col-sm-5 text-center text-sm-end">
+                    <div class="d-flex gap-2 justify-content-center justify-content-sm-end flex-wrap">
+                        <a href="index.html" class="btn btn-outline-light btn-sm px-3 py-2 w-100 w-sm-auto">
+                            <i class="bi bi-eye me-1"></i> View Live Site
+                        </a>
+                        <button class="btn btn-warning btn-sm fw-bold text-dark px-3 py-2 w-100 w-sm-auto">
+                            <i class="bi bi-sliders me-1"></i> Admin Panel
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="mb-4 mb-md-5">
+                <h4 class="text-secondary mb-3 text-uppercase fw-semibold fs-5"><i class="bi bi-speedometer2"></i>
+                    Dashboard Stats</h4>
+                <div class="row g-3">
+                    <div class="col-12 col-md-4">
+                        <div class="card text-center bg-primary text-warning shadow-sm">
+                            <div class="card-body py-3">
+                                <h5 class="card-title text-uppercase mb-1 small">Total Projects</h5>
+                                <p class="display-6 fw-bold m-0" id="stat-total">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="card text-center bg-primary text-warning shadow-sm">
+                            <div class="card-body py-3">
+                                <h5 class="card-title text-uppercase mb-1 small">Frontend Apps</h5>
+                                <p class="display-6 fw-bold m-0" id="stat-frontend">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="card text-center bg-primary text-warning shadow-sm">
+                            <div class="card-body py-3">
+                                <h5 class="card-title text-uppercase mb-1 small">JS Projects</h5>
+                                <p class="display-6 fw-bold m-0" id="stat-js">0</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card shadow-sm p-3 p-md-4 mb-4 border-0">
+                <h4 class="card-title border-bottom pb-2 mb-4 text-uppercase fw-semibold text-secondary fs-5"
+                    id="form-title-text">
+                    <i class="bi bi-plus-circle"></i> Add New Project
+                </h4>
+
+                <div id="form-feedback" class="alert d-none py-2 text-center small fw-bold" role="alert"></div>
+
+                <form id="admin-form" novalidate>
+                    <input type="hidden" id="edit-project-id">
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label for="p-title" class="form-label fw-bold small">Project Title</label>
+                            <input type="text" id="p-title" class="form-control" placeholder="Enter project title">
+                            <div class="text-danger small mt-1 fw-semibold error-msg" id="err-p-title"></div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label for="p-category" class="form-label fw-bold small">Project Category</label>
+                            <input type="text" id="p-category" class="form-control"
+                                placeholder="Frontend, Fullstack etc.">
+                            <div class="text-danger small mt-1 fw-semibold error-msg" id="err-p-category"></div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label for="p-tech" class="form-label fw-bold small">Technology Stack</label>
+                            <input type="text" id="p-tech" class="form-control" placeholder="HTML, CSS, JS">
+                            <div class="text-danger small mt-1 fw-semibold error-msg" id="err-p-tech"></div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label for="p-img" class="form-label fw-bold small">Image Path / URL</label>
+                            <input type="text" id="p-img" class="form-control" placeholder="images/project-name.png">
+                            <div class="text-danger small mt-1 fw-semibold error-msg" id="err-p-img"></div>
+                        </div>
+                        <div class="col-12">
+                            <label for="p-github" class="form-label fw-bold small">GitHub Repository Link</label>
+                            <input type="text" id="p-github" class="form-control"
+                                placeholder="https://github.com/username/repo">
+                            <div class="text-danger small mt-1 fw-semibold error-msg" id="err-p-github"></div>
+                        </div>
+                        <div class="col-12">
+                            <label for="p-desc" class="form-label fw-bold small">Project Description</label>
+                            <textarea id="p-desc" class="form-control" rows="3"
+                                placeholder="Write project details here..."></textarea>
+                            <div class="text-danger small mt-1 fw-semibold error-msg" id="err-p-desc"></div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-2 justify-content-end mt-4">
+                        <button type="button" id="btn-cancel" class="btn btn-secondary btn-sm px-3 d-none"><i
+                                class="bi bi-x-circle"></i> Cancel</button>
+                        <button type="submit" id="btn-add" class="btn btn-primary btn-sm px-3"><i
+                                class="bi bi-file-earmark-plus"></i> Add Project</button>
+                        <button type="submit" id="btn-update" class="btn btn-warning btn-sm text-white px-3 d-none"><i
+                                class="bi bi-pencil-square"></i> Update</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="bg-white p-3 rounded shadow-sm mb-4 border">
+                <div class="row align-items-center g-3">
+                    <div class="col-12 col-md-5">
+                        <div class="input-group">
+                            <span class="input-group-text bg-light border-secondary border-opacity-25 text-muted">
+                                <i class="bi bi-search"></i>
+                            </span>
+                            <input type="text" id="search-input" class="form-control border-secondary border-opacity-25"
+                                placeholder="Search Project by name...">
+                        </div>
+                    </div>
+            
+                    <div class="col-12 col-md-7">
+                        <div class="d-flex flex-wrap gap-2 justify-content-start justify-content-md-end align-items-center">
+                            <span class="small text-secondary fw-bold me-1 d-none d-sm-inline">
+                                <i class="bi bi-funnel"></i> Filter:
+                            </span>
+                            <button class="btn btn-secondary btn-sm px-3 py-2 fw-medium filter-btn flex-grow-1 flex-md-grow-0"
+                                data-filter="ALL">ALL</button>
+                            <button
+                                class="btn btn-outline-secondary btn-sm px-3 py-2 fw-medium filter-btn flex-grow-1 flex-md-grow-0"
+                                data-filter="FRONTEND">FRONTEND APPS</button>
+                            <button
+                                class="btn btn-outline-secondary btn-sm px-3 py-2 fw-medium filter-btn flex-grow-1 flex-md-grow-0"
+                                data-filter="JS">JS PROJECTS</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div id="loading-state" class="text-center text-primary my-4 d-none">
+                <div class="spinner-border spinner-border-sm" role="status"></div>
+                <p class="mt-2 small fw-semibold">Synchronizing with Database...</p>
+            </div>
+            <div id="error-state" class="alert alert-danger text-center shadow-sm d-none small" role="alert"></div>
+
+        <section class="card shadow-sm border-0 mb-5" id="table-wrapper-section">
+            <div class="card-body p-0">
+                <div class="table-responsive w-100 rounded-3">
+                    <table class="table table-hover align-middle mb-0" style="min-width: 750px;">
+                        <thead class="table-dark text-uppercase fs-7" style="letter-spacing: 0.5px;">
+                            <tr>
+                                <th class="ps-3 py-3" style="width: 8%">ID</th>
+                                <th class="py-3" style="width: 12%">Image</th>
+                                <th class="py-3" style="width: 25%">Project Title</th>
+                                <th class="py-3" style="width: 15%">Category</th>
+                                <th class="py-3" style="width: 25%">Technology</th>
+                                <th class="text-center py-3" style="width: 15%">Actions</th>
+                            </tr>
+                        </thead>
+        
+                        <tbody id="admin-table-body" class="border-top-0">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="admin.js"></script>
+</body>
+
+</html>
